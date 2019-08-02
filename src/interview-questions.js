@@ -26,8 +26,7 @@ c1.drive(42)
 c1.drive(50)
 
 console.log(c1)
-\`\`\`
-        `,
+\`\`\``,
       },
       {
         title: 'What is Object Oriented Programming?',

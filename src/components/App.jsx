@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import interviewQuestionsData from '../interview-questions'
+import MarkdownGithub from 'react-markdown-github'
 
 function App() {
   const [interviewQuestions, setInterviewQuestions] = useState(
@@ -41,21 +42,22 @@ function App() {
                 <p className="question__title">
                   {iGroup + 1}.{iQuestion + 1}. {question.title}
                 </p>
-                <p
+
+                <div
                   id={`answer-${iGroup}-${iQuestion}`}
-                  className={
-                    'question__answer' +
-                    (question.isAnswerVisible ? '' : ' question__answer--hiden')
-                  }
+                  className="question__answer"
                   style={{ height: getAnswerHeight(iGroup, iQuestion) }}
                 >
-                  {question.answer}
-                </p>
+                  <MarkdownGithub
+                    className="markdown-body"
+                    source={question.answer}
+                  />
+                </div>
                 <button
                   className="btn"
                   onClick={() => toggleAnswerVisibilty(iGroup, iQuestion)}
                 >
-                  Display answer
+                  {question.isAnswerVisible ? 'Hide' : 'Display'} answer
                 </button>
               </div>
             ))}

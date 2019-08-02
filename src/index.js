@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import '../node_modules/normalize.css/normalize.css'
+import '../node_modules/github-markdown-css/github-markdown.css'
 import './index.scss'
 
 import App from './components/App'
