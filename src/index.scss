@@ -1,0 +1,61 @@
+$blue: #51a3ff;
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+  color: #e23434;
+}
+
+.nav {
+  background-color: $blue;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+.nav__title {
+  margin: 0;
+  font-size: 1.8rem;
+}
+.container {
+  padding: 0 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.btn {
+  background-color: $blue;
+  color: white;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 8px 12px;
+}
+
+.question {
+  margin: 20px 0 50px 0;
+}
+.question__title {
+  font-weight: bold;
+}
+.question__answer {
+  // max-height: 200px;
+  // height: 100px;
+  background-color: white;
+  transition: 0.5s;
+  overflow: hidden;
+}
+.question__answer.question__answer--hiden {
+  height: 0;
+  // background-color: red;
+}
