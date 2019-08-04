@@ -75,12 +75,25 @@ Answer from https://www.smashingmagazine.com/2007/07/css-specificity-things-you-
 
 `.carrot` has a specifity of (0,1,0)
 
-So `.carrot` is more specific
+So `.carrot` is more specific.
 
-# DOM Manipulation
-
-## How to select the element with the id ...?
+## Which one is more specific between the two: "#a" and ".b.c .d"?
 
 - level: 1
 
-Lorem Ipsum Dolor Sit Amet
+`#a` has a specifity of (1,0,0)
+
+`.b.c .d` has a specifity of (0,3,0)
+
+So `#a` is more specific.
+
+# DOM Manipulation
+
+## How to select the element with the id "tomato"?
+
+- level: 1
+
+Different solutions:
+
+- `document.getElementsById("tomato")`
+- `document.querySelector("#tomato")`
