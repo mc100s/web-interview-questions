@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
 export default {
   useText: function(file) {
@@ -18,7 +18,7 @@ export default {
     }
     useEffect(() => {
       readTextFile(file)
-    }, [])
+    }, [file])
     return text
   },
 }
