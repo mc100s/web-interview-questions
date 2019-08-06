@@ -30,8 +30,74 @@ console.log(c1)
 ## What is Object Oriented Programming?
 
 - level: 1
+  In OOP everything is considered to be modeled as an object. This abstraction can be taken all the way down to nuts and bolts for a car, or as broad as simply a car type with a year, make, and model.
 
-Lorem Ipsum Dolor Sit Amet
+```js
+// Class
+class Book {
+  constructor({ title }) {
+    this.title = title;
+  }
+}
+
+class Person {
+  constructor({ name, age }) {
+    this.name = name;
+    this.age = age;
+  }
+  
+  growOlder (years = 1) {
+    this.age += years;
+  }
+  
+  sayAge () {
+    console.log(this.age);
+  }
+}
+
+class Student extends Person {
+  constructor({ name, age, course }) {
+    super({ name, age });
+    this.course = course;
+    this.books = [];
+  }
+  
+  aquireBook({ title }) {
+    this.books.push(new Book({ title }));
+  }
+}
+
+// Objects
+const jane = new Student({ name: 'Jane', age: 21, course: 'web-dev' });
+
+jane.growOlder();
+jane.sayAge();
+// Logged to console: 22
+
+jane.growOlder(5);
+jane.sayAge();
+// Logged to console: 27
+
+console.log(jane.books);
+// Logged to console: []
+
+jane.aquireBook({ title: 'Web Development Best Practices' });
+
+console.log(jane.books);
+// Logged to console: [ Book { title: 'Web Development Best Practices' } ]
+
+console.log(jane.books[0].title);
+// Logged to console: 'Web Development Best Practices'
+
+console.log(jane instanceof Student);
+// Logged to console: true
+console.log(jane instanceof Person);
+// Logged to console: true
+console.log(jane instanceof Book);
+// Logged to console: false
+console.log(jane.books[0] instanceof Book);
+// Logged to console: true
+```
 
 ## What is CORS?
 
